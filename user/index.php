@@ -18,7 +18,7 @@ $prefix=$U->GetPrefix();
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
-                    <input id="file" type="file" style="display: none;">
+                    <input id="file" type="file" style="display: none;" multiple="multiple">
                     <div id="container" style="display: none;" class="progress" >
                         <div id="fileProgress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
                           0%
@@ -77,10 +77,14 @@ $prefix=$U->GetPrefix();
     </div>
 
 <script type="text/javascript">
+var all=0;
+var allUpdateFile=0;
+
 $(document).ready(function(){
     getFile();
     $("#file").change(function(){
-        uploadFile();
+        allUpdateFile=$("#file")[0].files.length;
+        uploadFile(0);
     });
     $("#upload").click(function(){
         if($("#container").is(':visible') == false)
@@ -92,9 +96,6 @@ $(document).ready(function(){
         delFile();
     });
 });
-</script>
-<script type="text/javascript">
-var all=0;
 function showMult(ele){
     if(ele.checked)
         all++;
@@ -131,54 +132,58 @@ function delFile(){
         }
     });
 }
-function uploadFile(){
-        var name=$("#file").val().split('\\').pop().replace(/\s+/g, '-');
-        var formData=new FormData();
-        formData.append("key","<?php echo $prefix;?>"+name);
-        formData.append("token","<?php echo $upToken;?>");
-        formData.append("file",$("#file")[0].files[0]);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST','<?php echo $upRegion;?>');
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                var data=JSON.parse(xhr.responseText);
-                $.ajax({
-                url:'file_add.php',
-                type:'post',
-                data:{
-                    'key':data['key']
-                },
-                success:function(data){
-                    getFile();
-                },
-                error:function(){
-                    $("#msg-error").show();
-                }
-            });} else {
+function uploadFile(i){
+    if(i==allUpdateFile){
+        getFile();
+        $('#container').delay(1000).hide(100);
+        $('#cancel').hide(100);
+        return;
+    }
+    var name=$("#file")[0].files[i].name.split('\\').pop();
+    var formData=new FormData();
+    formData.append("key","<?php echo $prefix;?>"+name);
+    formData.append("token","<?php echo $upToken;?>");
+    formData.append("file",$("#file")[0].files[i]);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST','<?php echo $upRegion;?>');
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var data=JSON.parse(xhr.responseText);
+            $.ajax({
+            url:'file_add.php',
+            type:'post',
+            data:{
+                'key':data['key']
+            },
+            success:function(data){
+                uploadFile(i+1);
+            },
+            error:function(){
                 $("#msg-error").show();
             }
-            $('#container').delay(1000).hide(100);
+        });} else {
+            $("#msg-error").show();
+        }
+    };
+    xhr.onloadstart=function(){
+        $('#fileProgress').css('width', "0%").attr('aria-valuenow',0);
+        $('#fileProgress').html('0%');
+        $("#container").show();
+        $("#cancel").show();
+        $("#cancel").click(function(){
+            xhr.abort();
+            $('#container').hide(100);
             $('#cancel').hide(100);
-        };
-        xhr.onloadstart=function(){
-            $('#fileProgress').css('width', "0%").attr('aria-valuenow',0);
-            $('#fileProgress').html('0%');
-            $("#container").show();
-            $("#cancel").show();
-            $("#cancel").click(function(){
-                xhr.abort();
-                $('#container').hide(100);
-                $('#cancel').hide(100);
-            });
-        };
-        xhr.upload.onprogress = function (event) {
-        if (event.lengthComputable) {
-            var valeur= (event.loaded / event.total * 100 | 0);
-            $('#fileProgress').css('width', valeur+'%').attr('aria-valuenow', valeur);
-            $('#fileProgress').html( valeur+'%');
-        }};
-        xhr.send(formData);
-    }
+        });
+    };
+    xhr.upload.onprogress = function (event) {
+    if (event.lengthComputable) {
+        var valeur= (event.loaded / event.total * 100 | 0);
+        $('#fileProgress').css('width', valeur+'%').attr('aria-valuenow', valeur);
+        $('#fileProgress').html(name+":"+valeur+'%');
+    }};
+    xhr.send(formData);
+}
 function share(key){
     $.ajax({
         url:'share_file.php',

@@ -8,17 +8,9 @@ require_once '_check.php';
     <meta charset="UTF-8">
     <title><?php echo $site_name;  ?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
-    <!-- <link href="../asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
     <link href="https://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <!-- <link href="../asset/css/AdminLTE.min.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="../asset/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" /> -->
-
     <link href="https://cdn.bootcss.com/admin-lte/2.3.11/css/AdminLTE.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/admin-lte/2.3.11/css/skins/_all-skins.min.css" rel="stylesheet">
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>

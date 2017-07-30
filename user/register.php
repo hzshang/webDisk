@@ -8,13 +8,15 @@ require_once '../lib/config.php';
     <title><?php echo $site_name;  ?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
-    <link href="../asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Font Awesome Icons -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="../asset/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="../asset/css/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.bootcss.com/admin-lte/2.3.11/css/AdminLTE.min.css" rel="stylesheet">
+
+    <link href="https://cdn.bootcss.com/iCheck/1.0.1/skins/square/blue.css" rel="stylesheet">
+
 </head>
 <body class="register-page">
 <div class="register-box">
@@ -79,11 +81,14 @@ require_once '../lib/config.php';
     </div><!-- /.form-box -->
 </div><!-- /.register-box -->
 <!-- jQuery 2.1.3 -->
-<script src="../asset/js/jQuery.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
 <!-- Bootstrap 3.3.2 JS -->
-<script src="../asset/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 <!-- iCheck -->
-<script src="../asset/js/icheck.min.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/iCheck/1.0.2/icheck.min.js"></script>
+
 <script>
     $(function () {
         $('input').iCheck({

@@ -8,5 +8,4 @@ Disallow: /admin
 
 Disallow: /vendor
 
-User-agent: baiduspider
-Disallow: /
+

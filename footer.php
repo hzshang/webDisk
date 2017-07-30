@@ -32,9 +32,5 @@
         </div>
     </div>
 </footer>
-
-
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdn.bootcss.com/materialize/0.98.2/js/materialize.min.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@ namespace Ss\User;
 
 class UserInfo {
 
-    public  $uid;
+    private $uid;
     private $db;
 
 
@@ -23,7 +23,9 @@ class UserInfo {
         ]);
         return $datas['0'];
     }
-
+    function GetUid(){
+        return $this->uid;
+    }
     function GetPasswd(){
         return $this->UserArray()['pass'];
     }

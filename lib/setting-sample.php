@@ -20,7 +20,7 @@ $a_space=$togb*5;
 
 //name
 $site_name = "我的网盘";
-$site_url  = "http://webDisk";
+$site_url  = "http://mysite/";
 
 
 /**

@@ -1,3 +1,4 @@
+<script src="https://cdn.bootcss.com/materialize/0.98.2/js/materialize.min.js"></script>
 <footer class="page-footer orange">
     <div class="container">
         <div class="row">

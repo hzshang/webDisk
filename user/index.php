@@ -48,8 +48,8 @@ $prefix=$U->GetPrefix();
                       <center>删除失败！</center>
                     </div>                    
                     <div id="share-info"  style="display: none;" class="alert alert-info">
-                      <a class="close" onclick="$('.alert').hide()">×</a>  
-                      <center id="shareUrl"></center>
+                        <a class="close" onclick="$('.alert').hide()">×</a>  
+                        <center id="shareUrl"></center>
                     </div>
                     <!-- </div> -->
                     <div id="refreshPart">
@@ -75,7 +75,6 @@ $prefix=$U->GetPrefix();
             </div>
         </section>
     </div>
-
 <script type="text/javascript">
 var all=0;
 var allUpdateFile=0;
@@ -193,7 +192,7 @@ function share(key){
         },
         dataType:'json',
         success:function(data){
-            $("#shareUrl").html("分享成功，链接:"+data.url+",提取码:"+data.pwd);
+            $("#shareUrl").html("文件链接:"+data.url+",提取码:"+data.pwd);
             $("#share-info").show();
         }
     })

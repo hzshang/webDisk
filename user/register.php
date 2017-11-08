@@ -74,9 +74,7 @@ require_once '../lib/config.php';
                 <h4><i class="icon fa fa-warning"></i> 出错了!</h4>
                 <p id="msg-error-p"></p>
             </div>
-            <div class="form-group has-feedback">
-               <p>使用qq邮箱有可能收不到邮件;如未收到,请查看垃圾箱</p>
-            </div>
+
         <a href="login.php" class="text-center">已经注册？请登录</a>
     </div><!-- /.form-box -->
 </div><!-- /.register-box -->

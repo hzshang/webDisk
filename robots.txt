@@ -4,7 +4,6 @@ Disallow: /user
 
 Disallow: /lib
 
-Disallow: /admin
 
 Disallow: /vendor
 

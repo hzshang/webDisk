@@ -19,8 +19,8 @@ define('DB_TYPE','mysql');
 $a_space=$togb*5;
 
 //name
-$site_name = "我的网盘";
-$site_url  = "http://mysite/";
+$site_name = "WEB DISK";
+$site_url  = "http://your.domain/";
 
 
 /**
@@ -49,7 +49,7 @@ $mail_port=465;
 $accessKey = 'XXXXXXXXXXXXXXXXXXX';
 $secretKey = 'XXXXXXXXXXXXXXXXXXX';
 $bucket='webapp';
-$domain='http://qiniu.fsshitong.com/';
+$domain='http://domain.com/';
 $upRegion='http://up-z0.qiniu.com';
 
 

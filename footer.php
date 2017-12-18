@@ -29,7 +29,6 @@
             $Runtime->Stop();
             echo $Runtime->SpendTime()."ms";
             ?> Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-            粤ICP备13015570号-1
         </div>
     </div>
 </footer>

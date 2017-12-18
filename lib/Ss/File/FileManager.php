@@ -48,7 +48,7 @@ class FileManager{
 	function getUrl($key){
 		global $domain;
 		$name=substr($key,20);
-		$url=$domain.$key."?attname=".urlencode($name);
+		$url=$domain."/".$key."?attname=".urlencode($name);
 		return $this->Auth->privateDownloadUrl($url);
 	}
 	function randomCode() {  

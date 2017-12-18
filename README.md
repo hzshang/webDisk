@@ -12,6 +12,6 @@ Web Disk
 
 - 将仓库克隆到web目录下
 - 创建数据库并导入 sql/webdisk.sql
-- 将lib/config.php 重命名为lib/config.php并修改配置
+- 将lib/config-sample.php 重命名为lib/config.php并修改配置
 - Have fun!
 
